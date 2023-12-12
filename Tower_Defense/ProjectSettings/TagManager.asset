@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Goal
   - Result
+  - Tower
+  - TowerButton
   layers:
   - Default
   - TransparentFX

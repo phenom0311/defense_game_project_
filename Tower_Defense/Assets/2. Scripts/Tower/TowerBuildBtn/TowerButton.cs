@@ -19,6 +19,7 @@ public class TowerButton : MonoBehaviour
         transform.gameObject.SetActive(true);
         anim = GetComponentInChildren<Animator>();
         dirScript_script = FindObjectOfType<DirScript>();
+        tower_clone = null;
     }
 
     void Update()
@@ -46,13 +47,15 @@ public class TowerButton : MonoBehaviour
 
     public void Build()
     {
-        if(dirScript_script.gold >= 50)
+        if(dirScript_script.gold >= 50 && tower_clone == null)
         {
             tower_clone = Instantiate(tower, transform.position, Quaternion.identity);
-            tower_clone.transform.parent = transform.parent.transform;
+            tower_clone.transform.parent = transform;
             TowerScript towerScript = tower_clone.transform.GetComponent<TowerScript>();
             towerScript.towerTile = transform.gameObject;
-            transform.gameObject.SetActive(false);
+            //transform.gameObject.SetActive(false);
+            gameObject.GetComponent<PolygonCollider2D>().enabled= false;
+            anim.SetBool("isUp", false);
             dirScript_script.gold -= 50;
             print("bulid");
         }

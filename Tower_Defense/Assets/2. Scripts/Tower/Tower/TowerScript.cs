@@ -53,15 +53,25 @@ public class TowerScript : MonoBehaviour
         cur_cool_time -= Time.deltaTime;
         if(cur_cool_time <= 0.0f) cur_cool_time = 0.0f;
         gold = dirScript_script.gold;
+
+        
     }
-    //private void OnTriggerStay2D(Collider2D coll)
+
+    //private void OnMouseDown()
     //{
-    //    if (coll.tag == "Enemy")
+    //    if (cnt == 0)
     //    {
-    //        Attack(coll.gameObject);
+    //        cnt = 1;
+    //        anim.SetBool("isUp", true);
+    //    }
+    //    else
+    //    {
+    //        cnt = 0;
+    //        anim.SetBool("isUp", false);
     //    }
     //}
-    private void OnMouseDown()
+
+    public void IsClick()
     {
         if (cnt == 0)
         {
@@ -74,6 +84,7 @@ public class TowerScript : MonoBehaviour
             anim.SetBool("isUp", false);
         }
     }
+
     public void Attack(GameObject enemy)
     {
         if(cur_cool_time <= 0.0f)
@@ -114,7 +125,8 @@ public class TowerScript : MonoBehaviour
             anim.SetBool("isUp", false);
         }
         dirScript_script.gold += upgrade_cost[level] / 2;
-        towerTile.SetActive(true);
+        //towerTile.SetActive(true);
+        towerTile.GetComponent<PolygonCollider2D>().enabled = true;
         Destroy(gameObject);
     }
 
