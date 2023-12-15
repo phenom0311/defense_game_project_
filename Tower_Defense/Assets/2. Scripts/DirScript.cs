@@ -11,7 +11,7 @@ public class DirScript : MonoBehaviour
     public Text gold_text, score_text;
     Result result_script;
 
-    public int player_hp = 250;
+    public int player_hp = 500;
     float timer;
 
     GameObject clickedObject;
