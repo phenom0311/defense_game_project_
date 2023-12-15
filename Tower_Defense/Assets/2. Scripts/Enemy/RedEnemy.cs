@@ -108,6 +108,6 @@ public class RedEnemy : MonoBehaviour
     {
         Destroy(gameObject);
         enemyCtrl_script.GetHurt(level);
-        dirScript_script.gold += 10 * (level + 1);
+        dirScript_script.gold += 10 * (level + 1) * 2;
     }
 }

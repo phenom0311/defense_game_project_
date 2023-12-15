@@ -13,7 +13,7 @@ public class HpBar : MonoBehaviour
     void Start()
     {
         dirSciript = FindObjectOfType<DirScript>();
-        max_hp = 250;
+        max_hp = 500;
         hp = max_hp;
         hpBar.maxValue= max_hp;
     }

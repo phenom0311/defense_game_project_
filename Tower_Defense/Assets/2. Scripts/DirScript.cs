@@ -22,10 +22,10 @@ public class DirScript : MonoBehaviour
     void Start()
     {
         timer = 0.0f;
-        gold = 5000;
+        gold = 1000;
         score  = 0;
         result_script = FindObjectOfType<Result>();
-        player_hp = 10050;
+        player_hp = 500;
     }
 
     // Update is called once per frame
